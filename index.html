@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Luxe - Intelligent Hotel Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-hotel"></i>
+                <span>Grand <span class="luxe">Luxe</span></span>
+                <p class="tagline">Hotel Management</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active"><i class="fas fa-chart-line"></i> Overview</a></li>
+                <li><a href="#rooms" class="nav-link"><i class="fas fa-door-open"></i> Rooms</a></li>
+                <li><a href="#bookings" class="nav-link"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+                <li><a href="#admin" class="nav-link"><i class="fas fa-user-shield"></i> Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="badge-luxury">
+                <i class="fas fa-star"></i> 5-Star Luxury Experience
+            </div>
+            <h1 class="hero-title">
+                Welcome to <span class="gradient-text">Grand Luxe</span>
+            </h1>
+            <p class="hero-subtitle">
+                Luxury redefined with smart booking, instant billing, and seamless service.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="40">40+</h3>
+                    <p class="stat-label">Rooms</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="98">98%</h3>
+                    <p class="stat-label">Happy Guests</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="24">24/7</h3>
+                    <p class="stat-label">Support</p>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('rooms')">
+                    <i class="fas fa-calendar-plus"></i> Book Now
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="rooms-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Select Your Room</h2>
+                <p class="section-subtitle">Choose from our collection of luxury suites.</p>
+            </div>
+            
+            <div class="rooms-layout">
+                <div class="rooms-grid" id="roomsGrid">
+                    <!-- Rooms will be dynamically loaded here -->
+                </div>
+                
+                <div class="availability-sidebar">
+                    <div class="availability-card">
+                        <h3>Real-Time Floor Availability</h3>
+                        <div class="floor-availability" id="floorAvailability">
+                            <!-- Floor availability will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>Need Help?</h3>
+                        <p>Our concierge is available 24/7 to assist with your booking.</p>
+                        <button class="btn btn-help" onclick="alert('📞 Contact Support:\n\nPhone: +91 98765 43210\nEmail: support@grandluxe.com\nWhatsApp: +91 98765 43210\n\nOur team is available 24/7 to assist you!')">
+                            <i class="fas fa-headset"></i> Contact Support
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bookings Section -->
+    <section id="bookings" class="bookings-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Bookings</h2>
+                <p class="section-subtitle">Manage your reservations and view booking history.</p>
+            </div>
+            
+            <div class="bookings-container" id="bookingsContainer">
+                <!-- Bookings will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard Section -->
+    <section id="admin" class="admin-section">
+        <div class="container-fluid">
+            <div class="admin-header">
+                <div>
+                    <h2 class="admin-title">Admin Dashboard</h2>
+                    <p class="admin-subtitle">Overview of hotel operations and real-time status.</p>
+                </div>
+                </div>
+            
+            <div class="dashboard-grid">
+                <!-- Stats Cards -->
+                <div class="stat-box revenue-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p class="stat-title">Total Revenue</p>
+                        <h3 class="stat-value">₹<span id="totalRevenue">0</span></h3>
+                        <p class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> +20.1% from last month
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="stat-box occupancy-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p class="stat-title">Occupancy</p>
+                        <h3 class="stat-value"><span id="occupancyRate">0</span>%</h3>
+                        <p class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> +20.1% from last month
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="stat-box checkin-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-sign-in-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p class="stat-title">Check-ins</p>
+                        <h3 class="stat-value"><span id="checkIns">0</span></h3>
+                        <p class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> +20.1% from last month
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="stat-box checkout-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p class="stat-title">Check-Outs</p>
+                        <h3 class="stat-value"><span id="checkOuts">0</span></h3>
+                        <p class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> +20.1% from last month
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Revenue Chart -->
+                <div class="chart-card revenue-chart-card">
+                    <h3 class="chart-title">Revenue Overview</h3>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+                
+                </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Book Your Stay</h2>
+            <form id="bookingForm">
+                <input type="hidden" id="roomId" name="roomId">
+                
+                <div class="form-group">
+                    <label for="guestName">Guest Name</label>
+                    <input type="text" id="guestName" name="guestName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guestEmail">Email</label>
+                    <input type="email" id="guestEmail" name="guestEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guestPhone">Phone Number</label>
+                    <input type="tel" id="guestPhone" name="guestPhone" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkIn">Check-In Date</label>
+                        <input type="date" id="checkIn" name="checkIn" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="checkOut">Check-Out Date</label>
+                        <input type="date" id="checkOut" name="checkOut" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="guests" name="guests" min="1" max="4" value="1" required>
+                </div>
+                
+                <div class="extras-section">
+                    <h3>Additional Services</h3>
+                    <div class="extras-grid">
+                        <label class="extra-item">
+                            <input type="checkbox" name="breakfast" value="500">
+                            <span>Breakfast (₹500/day)</span>
+                        </label>
+                        <label class="extra-item">
+                            <input type="checkbox" name="parking" value="200">
+                            <span>Parking (₹200/day)</span>
+                        </label>
+                        <label class="extra-item">
+                            <input type="checkbox" name="spa" value="2000">
+                            <span>Spa Package (₹2000)</span>
+                        </label>
+                        <label class="extra-item">
+                            <input type="checkbox" name="airport" value="1500">
+                            <span>Airport Pickup (₹1500)</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="bill-preview">
+                    <h3>Bill Summary</h3>
+                    <div class="bill-row">
+                        <span>Room Charges:</span>
+                        <span id="roomCharges">₹0</span>
+                    </div>
+                    <div class="bill-row">
+                        <span>Additional Services:</span>
+                        <span id="extrasCharges">₹0</span>
+                    </div>
+                    <div class="bill-row">
+                        <span>GST (12%):</span>
+                        <span id="gstCharges">₹0</span>
+                    </div>
+                    <div class="bill-row total">
+                        <span>Total Amount:</span>
+                        <span id="totalCharges">₹0</span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-check-circle"></i> Confirm Booking
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
