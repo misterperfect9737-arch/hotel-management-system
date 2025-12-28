@@ -1,0 +1,232 @@
+╔═══════════════════════════════════════════════════════════════╗
+║           UPLOAD TO GITHUB - STEP BY STEP GUIDE               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+
+✅ YOUR PROJECT IS READY TO UPLOAD!
+
+
+═══════════════════════════════════════════════════════════════
+
+STEP 1: Go to GitHub Website
+────────────────────────────────────────────────────────────
+
+1. Open browser
+2. Go to: https://github.com
+3. Sign in (or create account if you don't have one)
+
+
+═══════════════════════════════════════════════════════════════
+
+STEP 2: Create New Repository
+────────────────────────────────────────────────────────────
+
+1. Click: + (plus icon at top right)
+2. Click: New repository
+
+3. Fill in details:
+   
+   Repository name: hotel-management-system
+   
+   Description: Modern Hotel Management System with Real-Time 
+                Booking, Dynamic Billing, and Admin Dashboard
+   
+   ○ Select: Public (so others can see it)
+   
+   ☐ DON'T check "Add a README file"
+   ☐ DON'T check "Add .gitignore"
+   ☐ DON'T check "Choose a license"
+
+4. Click: Create repository
+
+
+═══════════════════════════════════════════════════════════════
+
+STEP 3: Copy Repository URL
+────────────────────────────────────────────────────────────
+
+After creating, you'll see a page with commands.
+
+Copy the URL that looks like:
+   https://github.com/YOUR_USERNAME/hotel-management-system.git
+
+(Replace YOUR_USERNAME with your actual GitHub username)
+
+
+═══════════════════════════════════════════════════════════════
+
+STEP 4: Open Command Prompt
+────────────────────────────────────────────────────────────
+
+1. Press: Windows Key + R
+2. Type: cmd
+3. Press: Enter
+
+
+═══════════════════════════════════════════════════════════════
+
+STEP 5: Navigate to Project Folder
+────────────────────────────────────────────────────────────
+
+Type this command:
+
+cd "C:\Hotel System"
+
+Press Enter
+
+
+═══════════════════════════════════════════════════════════════
+
+STEP 6: Connect to GitHub
+────────────────────────────────────────────────────────────
+
+Type this command (replace YOUR_USERNAME with your GitHub username):
+
+git remote add origin https://github.com/YOUR_USERNAME/hotel-management-system.git
+
+Press Enter
+
+
+═══════════════════════════════════════════════════════════════
+
+STEP 7: Rename Branch to Main
+────────────────────────────────────────────────────────────
+
+Type this command:
+
+git branch -M main
+
+Press Enter
+
+
+═══════════════════════════════════════════════════════════════
+
+STEP 8: Push to GitHub
+────────────────────────────────────────────────────────────
+
+Type this command:
+
+git push -u origin main
+
+Press Enter
+
+
+═══════════════════════════════════════════════════════════════
+
+STEP 9: Enter Credentials
+────────────────────────────────────────────────────────────
+
+When prompted:
+- Username: your_github_username
+- Password: your_github_password
+  (or Personal Access Token - see below)
+
+Press Enter
+
+
+═══════════════════════════════════════════════════════════════
+
+✅ DONE! Your project is now on GitHub!
+────────────────────────────────────────────────────────────
+
+View at: https://github.com/YOUR_USERNAME/hotel-management-system
+
+
+═══════════════════════════════════════════════════════════════
+
+📋 QUICK COPY-PASTE COMMANDS:
+═══════════════════════════════════════════════════════════════
+
+cd "C:\Hotel System"
+git remote add origin https://github.com/YOUR_USERNAME/hotel-management-system.git
+git branch -M main
+git push -u origin main
+
+(Replace YOUR_USERNAME with your actual GitHub username)
+
+
+═══════════════════════════════════════════════════════════════
+
+⚠️ IF PASSWORD DOESN'T WORK:
+═══════════════════════════════════════════════════════════════
+
+GitHub requires Personal Access Token instead of password.
+
+To create token:
+
+1. Go to: GitHub → Settings (your profile)
+2. Scroll down → Developer settings
+3. Click: Personal access tokens → Tokens (classic)
+4. Click: Generate new token → Generate new token (classic)
+5. Give it a name: "Hotel Management Upload"
+6. Select expiration: 90 days
+7. Check: ✓ repo (all checkboxes under repo)
+8. Scroll down → Click: Generate token
+9. COPY THE TOKEN (you won't see it again!)
+10. Use this token as password when pushing
+
+
+═══════════════════════════════════════════════════════════════
+
+📝 EXAMPLE WITH REAL USERNAME:
+═══════════════════════════════════════════════════════════════
+
+If your GitHub username is "john123", commands will be:
+
+cd "C:\Hotel System"
+git remote add origin https://github.com/john123/hotel-management-system.git
+git branch -M main
+git push -u origin main
+
+
+═══════════════════════════════════════════════════════════════
+
+✅ WHAT WILL BE UPLOADED:
+═══════════════════════════════════════════════════════════════
+
+✓ index.html              - Frontend
+✓ styles.css              - Styling
+✓ script.js               - Logic
+✓ app.py                  - Backend
+✓ database.sql            - Database
+✓ requirements.txt        - Dependencies
+✓ README.md               - Documentation
+✓ PRESENTATION_GUIDE.md   - Presentation guide
+✓ PROJECT_SUMMARY.md      - Summary
+✓ RUN.txt                 - Run commands
+✓ .gitignore              - Git rules
+
+
+═══════════════════════════════════════════════════════════════
+
+🎉 AFTER UPLOAD:
+═══════════════════════════════════════════════════════════════
+
+Your project will be live at:
+   https://github.com/YOUR_USERNAME/hotel-management-system
+
+You can:
+- Share this link with anyone
+- Add it to your resume
+- Show it in interviews
+- Let others download your code
+
+
+═══════════════════════════════════════════════════════════════
+
+💡 TROUBLESHOOTING:
+═══════════════════════════════════════════════════════════════
+
+Error: "remote origin already exists"
+Solution: git remote remove origin
+Then try Step 6 again
+
+Error: "Permission denied"
+Solution: Use Personal Access Token instead of password
+
+Error: "Repository not found"
+Solution: Check if you created the repository on GitHub
+Check if username is correct in URL
+
+
+═══════════════════════════════════════════════════════════════
